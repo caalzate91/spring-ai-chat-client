@@ -1,0 +1,20 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gradle'
+    args: ['build']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/chat-client', '.']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/chat-client']
+  
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud run deploy chat-client \
+          --image gcr.io/$PROJECT_ID/chat-client \
+          --platform managed \
+          --region us-central1 \
+          --allow-unauthenticated

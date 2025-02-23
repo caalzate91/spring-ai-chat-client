@@ -1,0 +1,41 @@
+# Ignore Gradle build files
+.gradle/
+build/
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore Eclipse project files
+.project
+.classpath
+.settings/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore build output directories
+out/
+bin/
+
+# Ignore class files
+*.class
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore application properties
+src/main/resources/application.properties
+
+# Ignore Docker files
+docker-compose.yml
+docker-compose.override.yml
