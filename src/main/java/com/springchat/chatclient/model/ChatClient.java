@@ -1,5 +1,8 @@
 package com.springchat.chatclient.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public interface ChatClient {
 
     Prompt prompt();
