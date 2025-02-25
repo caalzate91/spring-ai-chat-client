@@ -6,26 +6,23 @@ This project is a simple chat client application built using Spring Boot, integr
 
 The project follows a standard Spring Boot structure with the following key components:
 
-- **src/main/java/com/example/chatclient**: Contains the main application code.
-  - **ChatClientApplication.java**: The entry point of the Spring Boot application.
-  - **config/VertexAIConfig.java**: Configuration for integrating with Google Vertex AI.
-  - **controller/ChatController.java**: REST controller for handling chat-related requests.
-  - **service/ChatService.java**: Business logic for processing messages and interacting with the AI model.
-  - **model/ChatMessage.java**: Represents a message in the chat.
+- **src/main/java/com/springchat/chatclient**: Contains the main application code.
+    - **ChatClientApplication.java**: The entry point of the Spring Boot application.
+    - **config/AppConfig.java**: Application configuration for the chat client.
+    - **controller/ChatController.java**: REST controller for handling chat-related requests.
+    - **service/ChatService.java**: Business logic for processing messages and interacting with the AI model.
+    - **model/ChatResponse.java**: Represents a chat response.
 
 - **src/main/resources**: Contains application resources.
-  - **application.properties**: Configuration properties for the Spring application.
-  - **static/**: Directory for static resources like HTML, CSS, and JavaScript files.
+    - **application.yml**: Configuration properties for the Spring application.
 
-- **src/test/java/com/example/chatclient**: Contains unit tests for the application.
+- **src/test/java/com/springchat/chatclient**: Contains unit tests for the application.
 
 - **build.gradle**: Gradle build configuration file specifying dependencies and plugins.
 
 - **Dockerfile**: Instructions for building a Docker image of the application.
 
 - **cloudbuild.yaml**: Configuration for Google Cloud Build to deploy the application.
-
-- **swagger-config/swagger-config.yaml**: Configuration for Swagger to generate API documentation.
 
 ## Getting Started
 
@@ -35,6 +32,14 @@ The project follows a standard Spring Boot structure with the following key comp
 - Gradle
 - Docker
 - Google Cloud SDK
+
+Install the gcloud CLI, appropriate for your operating system. See the [Google Cloud SDK documentation](https://cloud.google.com/sdk/docs/install) for installation instructions.
+
+Authenticate by running the following command. Replace `<PROJECT_ID>` with your Google Cloud project ID and `<ACCOUNT>` with your Google Cloud username.
+
+```sh
+gcloud config set project <PROJECT_ID> && gcloud auth application-default login <ACCOUNT>
+```
 
 ### Setup
 
