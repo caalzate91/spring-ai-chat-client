@@ -1,7 +1,7 @@
 package com.springchat.chatclient.controller;
 
-import com.springchat.chatclient.model.ChatResponse;
 import com.springchat.chatclient.service.ChatService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,7 +16,7 @@ public class ChatController {
     }
 
     @PostMapping
-    public ChatResponse chat(@RequestBody String message) {
-        return new ChatResponse(this.chatService.sendMessage(message));
+    public ResponseEntity<String> chat(@RequestParam(value = "message") String message) {
+        return ResponseEntity.ok(chatService.sendMessage(message));
     }
 }

@@ -1,6 +1,6 @@
 package com.springchat.chatclient.service;
 
-import com.springchat.chatclient.model.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,8 +13,7 @@ public class ChatService {
     }
 
     public String sendMessage(String content) {
-        return this.chatClient.prompt()
-                .user(content)
+        return this.chatClient.prompt(content)
                 .call()
                 .content();
     }

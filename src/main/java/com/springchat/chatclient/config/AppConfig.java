@@ -1,6 +1,6 @@
 package com.springchat.chatclient.config;
 
-import com.springchat.chatclient.model.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     @Bean
-    public ChatClient chatClient() {
-        return () -> null;
+    public ChatClient chatClient(ChatClient.Builder builder) {
+        return builder.build();
     }
 }
