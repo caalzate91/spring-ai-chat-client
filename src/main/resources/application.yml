@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-ai-gemini-chatbot
+  ai:
+    vertex:
+      ai:
+        gemini:
+          project-id: ${GEMINI_PROJECT_ID}
+          chat:
+            options:
+              model: ${GEMINI_MODEL}
+          location: ${GEMINI_LOCATION}
+          transport: rest
+        embedding:
+          project-id: ${spring.ai.vertex.ai.gemini.project-id}
+          location: ${spring.ai.vertex.ai.gemini.location}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+    com.example.chatclient: DEBUG
+
+
