@@ -1,6 +1,8 @@
 FROM openjdk:23-jdk-slim AS build
 WORKDIR /app
 
+COPY gradlew .
+COPY gradle ./gradle
 COPY build.gradle .
 COPY settings.gradle .
 COPY src ./src
